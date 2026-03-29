@@ -17,4 +17,4 @@ This site showcases my journey as an MSIT student at Florida State University, m
 
 ## 🛠️ Deployment
 The site is automatically deployed via GitHub Pages. You can view it live at:
-[https://jordangoul.github.io/](https://jordangoul.github.io/)
+[https://jordangoul.github.io/](https://jordangould22.github.io/jordangould.github.io/]([https://jordangoul.github.io/](https://jordangould22.github.io/jordangould.github.io/)
