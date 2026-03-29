@@ -3,11 +3,10 @@
 */
 
 :root {
-    /* BLUE SCHEME PALETTE */
-    --paper-bg: #f4f9ff;       /* Light blue-tinted paper */
-    --grid-line: rgba(0, 74, 153, 0.08); /* Subtle blue grid lines */
-    --pen-blue: #004a99;       /* Deep ink blue for accents */
-    --text-main: #2c3e50;      /* Dark slate for readability */
+    --paper-bg: #f4f9ff;
+    --grid-line: rgba(0, 74, 153, 0.08);
+    --pen-blue: #004a99;
+    --text-main: #2c3e50;
     --card-white: #ffffff;
 }
 
@@ -15,12 +14,10 @@
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--paper-bg);
-    /* Creates the graph paper effect */
     background-image: 
         linear-gradient(var(--grid-line) 1px, transparent 1px),
         linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
     background-size: 30px 30px; 
-    
     color: var(--text-main);
     line-height: 1.6;
     margin: 0;
@@ -49,20 +46,155 @@ header {
     flex-wrap: wrap;
 }
 
-/* 3. IMAGES */
+/* 3. PROFILE IMAGE */
 .profile-img {
     width: 200px;
     height: 200px;
-    border-radius: 20px; /* Slightly rounded "photo" look */
+    border-radius: 20px;
     object-fit: cover;
     border: 6px solid white;
     box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
-    transform: rotate(-2deg); /* "Dropped on desk" vibe */
+    transform: rotate(-2deg);
 }
 
+/* 4. TYPOGRAPHY */
+h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    color: var(--pen-blue);
+    letter-spacing: -2px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 10px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--pen-blue);
+    border-left: 5px solid var(--pen-blue);
+    padding-left: 15px;
+    margin-bottom: 30px;
+}
+
+/* 5. CARDS & SECTIONS */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card {
+    background: var(--card-white);
+    border-radius: 0px;
+    border: 1px solid #e1e8ed;
+    box-shadow: 8px 8px 0px var(--grid-line);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px rgba(0, 74, 153, 0.15);
+}
+
+/* 6. IMAGE CROPPING FIXES */
 .card-photo {
     width: 100%;
-    height: 200px;
+    height: 280px; /* Uniform height for all cards */
+    object-fit: cover;
+}
+
+/* Custom focal points for your specific photos */
+.card:nth-child(1) .card-photo { object-position: center 30%; } /* Scholarship */
+.card:nth-child(2) .card-photo { object-position: center; }    /* Service */
+.card:nth-child(3) .card-photo { object-position: center 15%; } /* Leadership */
+
+.card-text {
+    padding: 25px;
+    flex-grow: 1;
+}
+
+.card-text h3 {
+    margin-top: 0;
+    color: var(--pen-blue);
+    font-size: 1.4rem;
+}
+
+/* 7. LINKEDIN CARD */
+.link-card {
+    background-color: var(--pen-blue) !important;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 280px;
+}
+
+.link-card h3, .link-card p {
+    color: white !important;
+}
+
+/* 8. RESUME & DOWNLOAD BUTTON */
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.download-btn {
+    background-color: var(--pen-blue) !important;
+    color: white !important;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 2px solid var(--pen-blue);
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: white !important;
+    color: var(--pen-blue) !important;
+}
+
+.resume-container {
+    background: white;
+    padding: 15px;
+    border: 1px solid #e1e8ed;
+    box-shadow: 10px 10px 0px rgba(0, 74, 153, 0.05);
+}
+
+.resume-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 9. FOOTER */
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 0.85rem;
+    color: #99aab5;
+    letter-spacing: 1px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    h1 { font-size: 2.5rem; }
+    .header-content { text-align: center; }
+    .resume-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+}    height: 200px;
     object-fit: cover;
     border-bottom: 1px solid #eee;
 }
