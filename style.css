@@ -1,80 +1,140 @@
+/* Jordan Gould | Portfolio Stylesheet
+   Vibe: Blue Scratch Paper / Minimalist Professional
+*/
+
 :root {
-    --bg-color: #f8f9fa;
-    --text-color: #333;
-    --accent-color: #78281F; /* FSU Garnet inspired accent */
-    --card-bg: #ffffff;
+    /* BLUE SCHEME PALETTE */
+    --paper-bg: #f4f9ff;       /* Light blue-tinted paper */
+    --grid-line: rgba(0, 74, 153, 0.08); /* Subtle blue grid lines */
+    --pen-blue: #004a99;       /* Deep ink blue for accents */
+    --text-main: #2c3e50;      /* Dark slate for readability */
+    --card-white: #ffffff;
 }
 
+/* 1. THE BACKGROUND (SCRATCH PAPER GRID) */
 body {
-    font-family: 'Inter', sans-serif;
-    /* This creates a light blue graph paper grid pattern */
-    background-color: #f0f7ff; 
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--paper-bg);
+    /* Creates the graph paper effect */
     background-image: 
-        linear-gradient(rgba(0, 74, 153, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 74, 153, 0.1) 1px, transparent 1px);
-    background-size: 30px 30px; /* Adjust this to make the squares bigger or smaller */
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 30px 30px; 
     
-    color: var(--text-color);
+    color: var(--text-main);
     line-height: 1.6;
     margin: 0;
     padding: 0;
-
 }
 
+/* 2. LAYOUT CONTAINERS */
 .container {
-    max-width: 900px;
+    max-width: 950px;
     margin: 0 auto;
     padding: 40px 20px;
 }
 
 header {
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
-    text-align: center;
-    padding: 100px 20px;
+    background-color: var(--card-white);
+    border-bottom: 3px solid var(--pen-blue);
+    padding: 80px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
 }
 
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* 3. IMAGES */
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px; /* Slightly rounded "photo" look */
+    object-fit: cover;
+    border: 6px solid white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    transform: rotate(-2deg); /* "Dropped on desk" vibe */
+}
+
+.card-photo {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+/* 4. TYPOGRAPHY */
 h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    letter-spacing: -1px;
+    font-size: 3.5rem;
+    margin: 0;
+    color: var(--pen-blue);
+    letter-spacing: -2px;
 }
 
 .subtitle {
     font-size: 1.2rem;
-    color: #666;
+    color: #555;
+    margin-top: 10px;
     font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 h2 {
-    border-bottom: 2px solid var(--accent-color);
-    display: inline-block;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    color: var(--pen-blue);
+    border-left: 5px solid var(--pen-blue);
+    padding-left: 15px;
+    margin-bottom: 30px;
 }
 
+/* 5. CARDS & SECTIONS */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
 }
 
 .card {
-    background: var(--card-bg);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.2s;
+    background: var(--card-white);
+    border-radius: 0px; /* Sharp edges like a notepad */
+    border: 1px solid #e1e8ed;
+    box-shadow: 8px 8px 0px var(--grid-line); /* Hard "shadow" like a stack of paper */
+    transition: all 0.3s ease;
+    overflow: hidden;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px rgba(0, 74, 153, 0.15);
 }
 
+.card-text {
+    padding: 25px;
+}
+
+.card-text h3 {
+    margin-top: 0;
+    color: var(--pen-blue);
+    font-size: 1.4rem;
+}
+
+/* 6. FOOTER */
 footer {
     text-align: center;
-    padding: 50px;
-    font-size: 0.9rem;
-    color: #888;
+    padding: 60px 20px;
+    font-size: 0.85rem;
+    color: #99aab5;
+    letter-spacing: 1px;
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 600px) {
+    h1 { font-size: 2.5rem; }
+    .header-content { text-align: center; }
 }
