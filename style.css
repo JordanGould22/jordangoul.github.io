@@ -7,11 +7,18 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
+    /* This creates a light blue graph paper grid pattern */
+    background-color: #f0f7ff; 
+    background-image: 
+        linear-gradient(rgba(0, 74, 153, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 74, 153, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px; /* Adjust this to make the squares bigger or smaller */
+    
     color: var(--text-color);
     line-height: 1.6;
     margin: 0;
     padding: 0;
+
 }
 
 .container {
