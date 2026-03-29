@@ -138,3 +138,29 @@ footer {
     h1 { font-size: 2.5rem; }
     .header-content { text-align: center; }
 }
+
+/* Styling for the clickable LinkedIn card */
+.link-card {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    background-color: #004a99 !important; /* Blue background to stand out */
+}
+
+.link-card h3, .link-card p {
+    color: white !important;
+}
+
+/* Styling for the Resume image */
+.resume-container {
+    background: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.resume-img {
+    max-width: 100%;
+    height: auto;
+}
