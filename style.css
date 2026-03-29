@@ -164,3 +164,37 @@ footer {
     max-width: 100%;
     height: auto;
 }
+/* Resume Header with Button Alignment */
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Download Button Styling */
+.download-btn {
+    background-color: var(--pen-blue);
+    color: white !important;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+    border: 2px solid var(--pen-blue);
+}
+
+.download-btn:hover {
+    background-color: transparent;
+    color: var(--pen-blue) !important;
+}
+
+/* Responsive adjustment for the button */
+@media (max-width: 600px) {
+    .resume-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
