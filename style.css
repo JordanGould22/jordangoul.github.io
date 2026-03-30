@@ -328,5 +328,17 @@ footer {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
+/* Specifically fix the Service photo crop */
+.service-card .card-photo {
+    object-fit: cover; /* Keeps the professional filled look */
+    object-position: center 10%; /* Shoves the image DOWN so the TOP (your face) shows */
+}
+
+/* Ensure all other cards stay uniform */
+.card-photo {
+    width: 100%;
+    height: 280px; 
+    object-fit: cover;
+}
     }
 }
